@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Tooltip } from "@/components/ui/tooltip";
 import { LineChart, Line, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer } from "recharts";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 
@@ -42,12 +40,10 @@ export default function Dashboard() {
       </div>
       <div className="grid grid-cols-2 gap-4">
         {subreddits.map((sub) => (
-          <Card key={sub}>
-            <CardContent>
-              <h2 className="text-lg font-semibold">r/{sub}</h2>
-              <p>Datapunkter: {status.data_points[sub] || 0}</p>
-            </CardContent>
-          </Card>
+          <div key={sub} className="p-4 border rounded-lg shadow-md bg-white">
+            <h2 className="text-lg font-semibold">r/{sub}</h2>
+            <p>Datapunkter: {status.data_points[sub] || 0}</p>
+          </div>
         ))}
       </div>
       <div className="mt-6">
