@@ -40,7 +40,7 @@ export default function Dashboard() {
       </div>
       <div className="grid grid-cols-2 gap-4">
         {subreddits.map((sub) => (
-          <div key={sub} className="border rounded-lg p-4 shadow-md">
+          <div key={sub} className="border rounded-lg p-4 shadow-md bg-white">
             <h2 className="text-lg font-semibold">r/{sub}</h2>
             <p>Datapunkter: {status.data_points[sub] || 0}</p>
           </div>
